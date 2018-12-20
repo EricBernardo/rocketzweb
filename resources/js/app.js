@@ -6,5 +6,9 @@
 
 require('./bootstrap');
 
-import './default.js';
-import './client.js';
+require("./../../node_modules/jquery.inputmask/dist/inputmask/jquery.inputmask");
+
+require('./default.js');
+
+
+// require('client.js');
