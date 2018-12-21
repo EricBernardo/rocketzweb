@@ -4,19 +4,6 @@ $(document).ready(function () {
         return confirm('Deseja realmente fazer isso?');
     });
 
-    $('[name="cnpj"]').inputmask('99.999.999/9999-99', {"placeholder": ""});
-
-    $('[name="phone"]').inputmask('(99) 9999-99999', {"placeholder": ""});
-
-    $('[name="cep"]').inputmask('99999-999', {"placeholder": ""});
-
-    $('[name="discount"], [name="price"]').maskMoney({
-        allowNegative: true,
-        thousands: '.',
-        decimal: ',',
-        affixesStay: false
-    });
-
 });
 
 function numberToReal(n) {

@@ -1,14 +1,25 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
+import './bootstrap';
+import './plugins';
 
-require('./bootstrap');
+$(document).ready(() => {
 
-require("./../../node_modules/jquery.inputmask/dist/inputmask/jquery.inputmask");
+    $('.btn-delete').click(function () {
+        return confirm('Deseja realmente fazer isso?');
+    });
 
-require('./default.js');
+});
 
+function numberToReal(n) {
 
-// require('client.js');
+    let c, d, t, s, i, j;
+
+    c = isNaN(c = Math.abs(c)) ? 2 : c;
+    d = d == undefined ? "," : d;
+    t = t == undefined ? "." : t;
+    s = n < 0 ? "-" : "";
+    i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c)));
+    j = (j = i.length) > 3 ? j % 3 : 0;
+
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+
+}
