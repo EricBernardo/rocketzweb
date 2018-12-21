@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     #adminlte_routes
 
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
+
     Route::get('client', 'ClientController@index')->name('client.index');
     Route::get('client/create', 'ClientController@create')->name('client.create');
     Route::get('client/edit/{id}', 'ClientController@edit')->name('client.edit');

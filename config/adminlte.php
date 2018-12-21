@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'dashboard_url' => '/',
+    'dashboard_url' => '/dashboard',
 
     'logout_url' => 'logout',
 
@@ -109,7 +109,12 @@ return [
 
     'menu' => [
         'MAIN NAVIGATION',
+        [
+            'text' => 'Dashboard',
+            'url'  => '/dashboard',
+            'icon' => 'signal',
 
+        ],
         [
             'text' => 'Clientes',
             'url'  => 'client',

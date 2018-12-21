@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.5.21"
     },
     "dependencies": {
+        "chart.js": "^2.7.3",
         "inputmask": "^4.0.4",
         "jquery.inputmask": "^3.3.4",
         "simple-mask-money": "^2.0.1"

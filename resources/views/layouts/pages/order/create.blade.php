@@ -130,7 +130,6 @@
 
 @endsection
 
-
 @section('page_script')
     <script src="{{ asset('js/order.js?v=' . getenv('APP_VERSION')) }}"></script>
 @stop

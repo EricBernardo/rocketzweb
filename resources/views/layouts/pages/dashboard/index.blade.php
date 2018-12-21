@@ -64,4 +64,21 @@
         <!-- ./col -->
     </div>
 
+    <div class="box box-success">
+        <div class="box-header with-border">
+            <h3 class="box-title">Bar Chart</h3>
+        </div>
+        <div class="box-body">
+            <div class="chart">
+                <canvas id="barChart"></canvas>
+
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+
+@stop
+
+@section('page_script')
+    <script src="{{ asset('js/dashboard.js?v=' . getenv('APP_VERSION')) }}"></script>
 @stop

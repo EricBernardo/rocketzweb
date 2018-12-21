@@ -25,3 +25,7 @@ mix.js([
 mix.js([
     'resources/js/order.js'
 ], 'public/js/order.js');
+
+mix.js([
+    'resources/js/dashboard.js'
+], 'public/js/dashboard.js');
