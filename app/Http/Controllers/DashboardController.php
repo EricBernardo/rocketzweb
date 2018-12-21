@@ -11,10 +11,10 @@ use App\Http\Requests;
 use Illuminate\Http\Request;
 
 /**
- * Class HomeController
+ * Class DashboardController
  * @package App\Http\Controllers
  */
-class HomeController extends Controller
+class DashboardController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -33,6 +33,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('layouts.pages.dashboard.index');
     }
 }

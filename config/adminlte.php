@@ -85,7 +85,7 @@ return [
     |
     */
 
-    'dashboard_url' => 'home',
+    'dashboard_url' => '/',
 
     'logout_url' => 'logout',
 
@@ -111,29 +111,34 @@ return [
         'MAIN NAVIGATION',
 
         [
-            'text'        => 'Clientes',
-            'url'         => 'client',
-            'icon'        => 'building',
+            'text' => 'Clientes',
+            'url'  => 'client',
+            'icon' => 'building',
 
         ],
         [
-            'text'        => 'Produtos',
-            'url'         => 'product',
-            'icon'        => 'bars',
+            'text' => 'Produtos',
+            'url'  => 'product',
+            'icon' => 'bars',
 
         ],
         [
-            'text'        => 'order',
-            'url'         => 'admin/pages',
-            'icon'        => 'shopping-cart',
+            'text' => 'Pedidos',
+            'url'  => 'order',
+            'icon' => 'shopping-cart',
 
         ],
-        'ACCOUNT SETTINGS',
+        [
+            'header' => 'ACCOUNT SETTINGS',
+            'can'    => 'root'
+        ],
         [
             'text' => 'Usuários',
             'url'  => 'user',
             'icon' => 'users',
+            'can'  => 'root'
         ],
+
     ],
 
     /*
@@ -153,7 +158,8 @@ return [
         JeroenNoten\LaravelAdminLte\Menu\Filters\ActiveFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\SubmenuFilter::class,
         JeroenNoten\LaravelAdminLte\Menu\Filters\ClassesFilter::class,
-        JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class,
+        //JeroenNoten\LaravelAdminLte\Menu\Filters\GateFilter::class, Comment this line out
+        App\Filters\MenuFilter::class,
     ],
 
     /*

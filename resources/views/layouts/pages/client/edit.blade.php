@@ -1,10 +1,5 @@
-@extends('adminlte::layouts.app')
-
-@section('htmlheader_title')
-    {{ trans('adminlte_lang::message.home') }}
-@endsection
-
-@section('main-content')
+@extends('adminlte::page')
+@section('content')
 
     <section class="content">
 
@@ -15,7 +10,7 @@
 
             <div class="box box-info">
                 <div class="box-header">
-                    <h3 class="box-title">{{ trans('adminlte_lang::message.edit') }}</h3>
+                    <h3 class="box-title">{{ __('messages.edit') }}</h3>
                 </div>
                 <div class="box-body">
 
@@ -28,33 +23,33 @@
                         <div class="row">
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.cnpj') }}:</label>
+                                <label>{{ __('messages.cnpj') }}:</label>
                                 <input type="text" name="cnpj" value="{{$result['cnpj']}}" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.title') }}:</label>
+                                <label>{{ __('messages.title') }}:</label>
                                 <input type="text" name="title" value="{{$result['title']}}" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.state_registration') }}:</label>
+                                <label>{{ __('messages.state_registration') }}:</label>
                                 <input type="text" name="state_registration" class="form-control"
                                        value="{{ $result['state_registration'] }}">
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.phone') }}:</label>
+                                <label>{{ __('messages.phone') }}:</label>
                                 <input type="text" name="phone" value="{{$result['phone']}}" class="form-control">
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.cep') }}:</label>
+                                <label>{{ __('messages.cep') }}:</label>
                                 <input type="text" name="cep" class="form-control" value="{{$result['cep']}}" required>
                             </div>
 
                             <div class="form-group col-xs-4 col-md-2">
-                                <label>{{ trans('adminlte_lang::message.state') }}:</label>
+                                <label>{{ __('messages.state') }}:</label>
                                 <select class="form-control" name="state_id" required>
                                     <option value="">Selecione</option>
                                     @foreach($states as $state)
@@ -64,7 +59,7 @@
                             </div>
 
                             <div class="form-group col-xs-8 col-md-4">
-                                <label>{{ trans('adminlte_lang::message.city') }}:</label>
+                                <label>{{ __('messages.city') }}:</label>
                                 <select class="form-control" name="city_id" required>
                                     <option value="">Selecione</option>
                                     @foreach($cities as $city)
@@ -74,33 +69,33 @@
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.address') }}:</label>
+                                <label>{{ __('messages.address') }}:</label>
                                 <input type="text" name="address" value="{{$result['address']}}" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.neighborhood') }}:</label>
+                                <label>{{ __('messages.neighborhood') }}:</label>
                                 <input type="text" name="neighborhood" value="{{$result['neighborhood']}}"
                                        class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.number') }}:</label>
+                                <label>{{ __('messages.number') }}:</label>
                                 <input type="number" name="number" value="{{$result['number']}}" class="form-control" required>
                             </div>
 
                             <div class="form-group col-md-6">
-                                <label>{{ trans('adminlte_lang::message.complement') }}:</label>
+                                <label>{{ __('messages.complement') }}:</label>
                                 <input type="text" name="complement" value="{{$result['complement']}}"
                                        class="form-control">
                             </div>
 
                             <div class="form-group col-md-12">
                                 <a href="{{ route('client.index') }}" class="btn btn-default pull-left">
-                                    {{ trans('adminlte_lang::message.back') }}
+                                    {{ __('messages.back') }}
                                 </a>
                                 <input type="submit" class="btn btn-info pull-right"
-                                       value="{{ trans('adminlte_lang::message.save') }}"/>
+                                       value="{{ __('messages.save') }}"/>
                             </div>
 
                         </div>
@@ -116,3 +111,7 @@
     </section>
 
 @endsection
+
+@section('page_script')
+    <script src="{{ asset('js/client.js?v=' . getenv('APP_VERSION')) }}"></script>
+@stop

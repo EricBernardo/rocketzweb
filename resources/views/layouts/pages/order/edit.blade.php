@@ -1,8 +1,5 @@
-@extends('adminlte::layouts.app')
-@section('htmlheader_title')
-    {{ trans('adminlte_lang::message.home') }}
-@endsection
-@section('main-content')
+@extends('adminlte::page')
+@section('content')
     <section
             class="content">
         <div class="row">
@@ -20,14 +17,14 @@
 
                 <div class="box-header">
                     <h3 class="box-title">
-                        {{ trans('adminlte_lang::message.order') }}
+                        {{ __('messages.order') }}
                     </h3>
-                    <button class="btn btn-success pull-right btn-product-add">{{ trans('adminlte_lang::message.add_product') }}</button>
+                    <button class="btn btn-success pull-right btn-product-add">{{ __('messages.add_product') }}</button>
                 </div>
 
                 <div class="box-body">
 
-                    <form method="POST" action="javascript:save_order()" data-action="{{ route('order.update', [ 'id' => $result['id'] ]) }}" id="form-order-create">
+                    <form method="POST" data-action="{{ route('order.update', [ 'id' => $result['id'] ]) }}" id="form-order-create">
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -39,10 +36,10 @@
 
                                 <div class="form-group col-xs-12 col-md-3">
 
-                                    <label><strong>{{ trans('adminlte_lang::message.client') }}:</strong></label>
+                                    <label><strong>{{ __('messages.client') }}:</strong></label>
 
                                     <select class="form-control" name="client_id" required>
-                                        <option value="">{{ trans('adminlte_lang::message.select_client') }}</option>
+                                        <option value="">{{ __('messages.select_client') }}</option>
                                         @foreach($clients as $client)
                                             <option value="{{$client['id']}}" {{$result['client_id'] == $client['id'] ? 'selected' : ''}}>{{$client['title']}}</option>
                                         @endforeach
@@ -55,10 +52,10 @@
                             <table class="table table-bordered">
                                 <thead>
                                 <tr>
-                                    <th scope="col">{{ trans('adminlte_lang::message.product') }}</th>
-                                    <th scope="col" width="120">{{ trans('adminlte_lang::message.quantity') }}</th>
-                                    <th scope="col" width="120">{{ trans('adminlte_lang::message.price') }}</th>
-                                    <th scope="col" width="120" class="text-right">{{ trans('adminlte_lang::message.action') }}</th>
+                                    <th scope="col">{{ __('messages.product') }}</th>
+                                    <th scope="col" width="120">{{ __('messages.quantity') }}</th>
+                                    <th scope="col" width="120">{{ __('messages.price') }}</th>
+                                    <th scope="col" width="120" class="text-right">{{ __('messages.action') }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -106,15 +103,15 @@
                                             <div class="row">
                                                 <div class="col-xs-12 col-md-4">
                                                     <div class="form-group">
-                                                        <label><strong>{{ trans('adminlte_lang::message.discount') }}</strong></label>
+                                                        <label><strong>{{ __('messages.discount') }}</strong></label>
                                                         <input type="text" class="form-control" name="discount" placeholder="R$ 0,00"
                                                                value="{{number_format($result['discount'],2,',','.')}}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label><strong>{{ trans('adminlte_lang::message.paid') }}?</strong></label>
+                                                        <label><strong>{{ __('messages.paid') }}?</strong></label>
                                                         <select class="form-control" name="paid">
-                                                            <option value="0" {{!$result['paid'] ? 'selected' : ''}}>{{ trans('adminlte_lang::message.no_paid') }}</option>
-                                                            <option value="1" {{$result['paid'] ? 'selected' : ''}}>{{ trans('adminlte_lang::message.paid') }}</option>
+                                                            <option value="0" {{!$result['paid'] ? 'selected' : ''}}>{{ __('messages.no_paid') }}</option>
+                                                            <option value="1" {{$result['paid'] ? 'selected' : ''}}>{{ __('messages.paid') }}</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -124,24 +121,24 @@
 
                                         <div class="col-xs-12 col-md-3 text-right">
 
-                                            <p><h4 class="text-bold">{{ trans('adminlte_lang::message.overview_order') }}</h4></p>
+                                            <p><h4 class="text-bold">{{ __('messages.overview_order') }}</h4></p>
 
                                             <p>
-                                                <strong>{{ trans('adminlte_lang::message.subtotal') }}</strong>
-                                                <strong class="text-lowercase">(<span class="order-total-product">1</span> {{ trans('adminlte_lang::message.product') }}(s)):</strong>
+                                                <strong>{{ __('messages.subtotal') }}</strong>
+                                                <strong class="text-lowercase">(<span class="order-total-product">1</span> {{ __('messages.product') }}(s)):</strong>
                                                 <span class="order-subtotal">R$ {{number_format($result['subtotal'],2,',','.')}}</span>
                                             </p>
                                             <p>
-                                                <strong>{{ trans('adminlte_lang::message.discount') }}: </strong>
+                                                <strong>{{ __('messages.discount') }}: </strong>
                                                 <span class="order-discount">R$ {{number_format($result['discount'],2,',','.')}}</span>
                                             </p>
                                             <p>
-                                                <strong>{{ trans('adminlte_lang::message.total') }}: </strong>
+                                                <strong>{{ __('messages.total') }}: </strong>
                                                 <span class="order-total">R$ {{number_format($result['total'],2,',','.')}}</span>
                                             </p>
 
                                             <p>
-                                                <strong>{{ trans('adminlte_lang::message.date') }}: </strong>
+                                                <strong>{{ __('messages.date') }}: </strong>
                                                 <span>{{date('d/m/Y H:i', strtotime($result['created_at']))}}</span>
                                             </p>
 
@@ -153,8 +150,8 @@
 
                                 <div class="col-xs-12">
 
-                                    <a href="{{ route('order.index') }}" class="btn btn-default pull-left">{{ trans('adminlte_lang::message.back') }}</a>
-                                    <input type="submit" class="btn btn-info pull-right" value="{{ trans('adminlte_lang::message.save') }}"/>
+                                    <a href="{{ route('order.index') }}" class="btn btn-default pull-left">{{ __('messages.back') }}</a>
+                                    <input type="submit" class="btn btn-info pull-right" value="{{ __('messages.save') }}"/>
 
                                 </div>
 
@@ -171,3 +168,8 @@
     </section>
 
 @endsection
+
+
+@section('page_script')
+    <script src="{{ asset('js/order.js?v=' . getenv('APP_VERSION')) }}"></script>
+@stop

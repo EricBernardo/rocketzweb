@@ -28,26 +28,23 @@
 @if(config('adminlte.plugins.datatables'))
     <!-- DataTables with bootstrap 3 style -->
         <link rel="stylesheet" href="//cdn.datatables.net/v/bs/dt-1.10.18/datatables.min.css">
-@endif
+        @endif
 
 @yield('adminlte_css')
 
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
-
-    <script>var base_url = {!! json_encode(url('/')) !!} +'/';</script>
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <script>var base_url = {!! json_encode(url('/')) !!} +'/';</script>
 </head>
 <body class="hold-transition @yield('body_class')">
 
 @yield('body')
 
-{{--<script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.min.js') }}"></script>--}}
-{{--<script src="{{ asset('vendor/adminlte/vendor/jquery/dist/jquery.slimscroll.min.js') }}"></script>--}}
-{{--<script src="{{ asset('vendor/adminlte/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>--}}
+<script src="{{ asset('js/app.js?v=' . getenv('APP_VERSION')) }}"></script>
 
-<script src="{{ asset('js/app.js?v=' . time()) }}"></script>
+@yield('page_script')
 
 </body>
 </html>

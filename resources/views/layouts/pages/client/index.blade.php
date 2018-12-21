@@ -1,11 +1,4 @@
 @extends('adminlte::page')
-
-@section('title', 'RocketZ Web')
-
-@section('content_header')
-    <h1>Listagem cliente</h1>
-@stop
-
 @section('content')
 
     <section class="content">

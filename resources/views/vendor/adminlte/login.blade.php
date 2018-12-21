@@ -13,7 +13,6 @@
         <div class="login-logo">
             <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</a>
         </div>
-        <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">{{ __('messages.login_message') }}</p>
             <form action="{{ url(config('adminlte.login_url', 'login')) }}" method="post">
@@ -47,12 +46,10 @@
                             </label>
                         </div>
                     </div>
-                    <!-- /.col -->
                     <div class="col-xs-4">
                         <button type="submit"
                                 class="btn btn-primary btn-block btn-flat">{{ __('messages.buttonsign') }}</button>
                     </div>
-                    <!-- /.col -->
                 </div>
             </form>
             <div class="auth-links">
@@ -61,11 +58,11 @@
                 >{{ __('messages.forgotpassword') }}</a>
             </div>
         </div>
-        <!-- /.login-box-body -->
-    </div><!-- /.login-box -->
+    </div>
 @stop
 
-@section('adminlte_js')
+@section('page_script')
+
     <script src="{{ asset('vendor/adminlte/plugins/iCheck/icheck.min.js') }}"></script>
     <script>
         $(function () {
@@ -76,5 +73,5 @@
             });
         });
     </script>
-    @yield('js')
+
 @stop

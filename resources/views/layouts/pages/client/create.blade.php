@@ -1,11 +1,4 @@
 @extends('adminlte::page')
-
-@section('title', 'RocketZ Web')
-
-@section('content_header')
-    <h1>Cadadastro client</h1>
-@stop
-
 @section('content')
 
     <section class="content">
@@ -114,3 +107,7 @@
     </section>
 
 @endsection
+
+@section('page_script')
+    <script src="{{ asset('js/client.js?v=' . getenv('APP_VERSION')) }}"></script>
+@stop

@@ -1,3 +1,13 @@
+import Inputmask from 'inputmask';
+
+window.Inputmask = Inputmask;
+
+Inputmask('99.999.999/9999-99', {"placeholder": ""}).mask($('[name="cnpj"]'));
+
+Inputmask('(99) 9999-99999', {"placeholder": ""}).mask($('[name="phone"]'));
+
+Inputmask('99999-999', {"placeholder": ""}).mask($('[name="cep"]'));
+
 $(document).ready(function () {
 
     $('[name="cep"]').blur(function () {

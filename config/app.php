@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+        LaravelLegends\PtBrValidator\ValidatorProvider::class,
+        Canducci\Cep\Providers\CepServiceProvider::class,
 
     ],
 
