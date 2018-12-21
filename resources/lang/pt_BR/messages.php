@@ -173,4 +173,6 @@ return [
     'deliveryman'             => 'Entregador',
     'administrator'           => 'Administrador',
     'log_out'                 => 'Sair',
+    'login_message'           => 'Entre para iniciar sua sessão',
+    'remember_me'             => 'Lembre de mim',
 ];
