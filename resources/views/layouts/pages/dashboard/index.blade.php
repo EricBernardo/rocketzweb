@@ -2,66 +2,63 @@
 @section('content')
 
     <div class="row">
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-aqua">
-                <div class="inner">
-                    <h3>150</h3>
-
-                    <p>New Orders</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-bag"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-green">
-                <div class="inner">
-                    <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-                    <p>Bounce Rate</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-stats-bars"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
-            <div class="small-box bg-yellow">
-                <div class="inner">
-                    <h3>44</h3>
-
-                    <p>User Registrations</p>
-                </div>
-                <div class="icon">
-                    <i class="ion ion-person-add"></i>
-                </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-            </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-            <!-- small box -->
+        <div class="col-lg-4 col-xs-12">
             <div class="small-box bg-red">
                 <div class="inner">
-                    <h3>65</h3>
-
-                    <p>Unique Visitors</p>
+                    <h3>R$ 400.00</h3>
+                    <strong>Saidas (-)</strong>
                 </div>
                 <div class="icon">
-                    <i class="ion ion-pie-graph"></i>
+                    <i class="fa fa-level-down"></i>
                 </div>
-                <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
             </div>
         </div>
-        <!-- ./col -->
+        <div class="col-lg-4 col-xs-12">
+            <div class="small-box bg-green">
+                <div class="inner">
+                    <h3>R$ 53.00</h3>
+                    <strong>Entradas (+)</strong>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-level-up"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 col-xs-12">
+            <div class="small-box bg-aqua">
+                <div class="inner">
+                    <h3>R$ 550,00</h3>
+                    <strong>Saldo (=)</strong>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-money"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-xs-12">
+            <div class="small-box bg-yellow">
+                <div class="inner">
+                    <h3>123</h3>
+                    <strong>Total clientes</strong>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-users"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-xs-12">
+            <div class="small-box bg-gray">
+                <div class="inner">
+                    <h3>234</h3>
+                    <strong>Total Pedidos</strong>
+                </div>
+                <div class="icon">
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="box box-success">
@@ -70,7 +67,7 @@
         </div>
         <div class="box-body">
             <div class="chart">
-                <canvas id="barChart"></canvas>
+                <canvas id="barChart" height="300px"></canvas>
 
             </div>
         </div>

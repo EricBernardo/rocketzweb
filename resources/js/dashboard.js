@@ -1,10 +1,10 @@
-import Chart from 'Chart.js';
+import Chart from 'chart.js';
 
 window.Chart = Chart;
 
 var mychart = document.getElementById("barChart").getContext("2d");
 
-mychart.height = 500;
+mychart.height = 300;
 
 new Chart(mychart, {
     type: 'bar',

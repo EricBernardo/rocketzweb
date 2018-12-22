@@ -135,7 +135,7 @@ input.formatToNumber();
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/vagrant/code/benquer/rocketzweb/resources/js/product.js */"./resources/js/product.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/rocketzweb/resources/js/product.js */"./resources/js/product.js");
 
 
 /***/ })
