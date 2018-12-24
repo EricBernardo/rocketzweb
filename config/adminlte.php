@@ -110,7 +110,7 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
-            'text' => 'Dashboard',
+            'text' => 'DashboardService',
             'url'  => '/dashboard',
             'icon' => 'signal',
 

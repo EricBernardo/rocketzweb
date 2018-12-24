@@ -8,6 +8,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Services\DashboardService;
 use Illuminate\Http\Request;
 
 /**
@@ -16,23 +17,28 @@ use Illuminate\Http\Request;
  */
 class DashboardController extends Controller
 {
+    
+    private $service;
+    
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(DashboardService $service)
     {
         $this->middleware('auth');
+        $this->service = $service;
     }
-
+    
     /**
      * Show the application dashboard.
      *
      * @return Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('layouts.pages.dashboard.index');
+        $data = $this->service->infos($request);
+        return view('layouts.pages.dashboard.index', compact('data'));
     }
 }

@@ -9,11 +9,13 @@
             <form action="{{ route('dashboard.index') }}" method="get">
                 <div class="form-group col-xs-12 col-md-6">
                     <label for="date_start">Data inicial</label>
-                    <input type="date" class="form-control" name="date_start" id="date_start">
+                    <input type="date" class="form-control" name="date_start" id="date_start"
+                           value="{{ \Request::get('date_start') }}">
                 </div>
                 <div class="form-group col-xs-12 col-md-6">
                     <label for="date_end">Data final</label>
-                    <input type="date" class="form-control" name="date_start" id="date_start">
+                    <input type="date" class="form-control" name="date_end" id="date_end"
+                           value="{{ \Request::get('date_end') }}">
                 </div>
                 <div class="form-group col-xs-12 text-right">
                     <input type="submit" class="btn btn-success" value="Filtrar">
@@ -65,7 +67,7 @@
                 <div class="col-lg-4 col-xs-12">
                     <div class="small-box bg-yellow">
                         <div class="inner">
-                            <h3>123</h3>
+                            <h3>{{ $data['new_clients'] }}</h3>
                             <strong>{{ __('messages.new_clients') }}</strong>
                         </div>
                         <div class="icon">
@@ -77,7 +79,7 @@
                 <div class="col-lg-4 col-xs-12">
                     <div class="small-box bg-gray">
                         <div class="inner">
-                            <h3>234</h3>
+                            <h3>{{ $data['orders'] }}</h3>
                             <strong>{{ __('messages.orders') }}</strong>
                         </div>
                         <div class="icon">
