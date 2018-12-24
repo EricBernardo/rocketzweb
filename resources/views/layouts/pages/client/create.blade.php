@@ -14,7 +14,7 @@
                 </div>
                 <div class="box-body">
 
-                    <form method="POST" action="{{ route('client.store') }}" data-action="{{ route('order.create') }}">
+                    <form method="POST" action="{{ route('client.store') }}">
 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 

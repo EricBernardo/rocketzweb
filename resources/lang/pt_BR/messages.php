@@ -1,7 +1,7 @@
 <?php
 
 return [
-
+    
     /*
     |--------------------------------------------------------------------------
     | Language Lines
@@ -12,7 +12,7 @@ return [
     | these language lines according to your application's requirements.
     |
     */
-
+    
     'logged'                  => 'Você esta conectado!',
     'someproblems'            => 'Houve algum problema com sua informação.',
     'siginsession'            => 'Acesse para iniciar sua sessão',
@@ -175,4 +175,11 @@ return [
     'log_out'                 => 'Sair',
     'login_message'           => 'Entre para iniciar sua sessão',
     'remember_me'             => 'Lembre de mim',
+    'outputs'                 => 'Saídas',
+    'inputs'                  => 'Entradas',
+    'balance'                 => 'Saldo',
+    'new_clients'             => 'Novos clientes',
+    'balance'                 => 'Saldo',
+    'cash_flow'               => 'Fluxo de caixa',
+    'filter'                  => 'Filtro',
 ];
