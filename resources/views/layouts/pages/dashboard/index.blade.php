@@ -31,17 +31,6 @@
             <div class="row">
 
                 <div class="col-lg-4 col-xs-12">
-                    <div class="small-box bg-red">
-                        <div class="inner">
-                            <h3>R$ 400.00</h3>
-                            <strong>{{ __('messages.outputs') }} (-)</strong>
-                        </div>
-                        <div class="icon">
-                            <i class="fa fa-level-down"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-xs-12">
                     <div class="small-box bg-green">
                         <div class="inner">
                             <h3>R$ 53.00</h3>
@@ -49,6 +38,17 @@
                         </div>
                         <div class="icon">
                             <i class="fa fa-level-up"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-xs-12">
+                    <div class="small-box bg-red">
+                        <div class="inner">
+                            <h3>R$ 400.00</h3>
+                            <strong>{{ __('messages.outputs') }} (-)</strong>
+                        </div>
+                        <div class="icon">
+                            <i class="fa fa-level-down"></i>
                         </div>
                     </div>
                 </div>
