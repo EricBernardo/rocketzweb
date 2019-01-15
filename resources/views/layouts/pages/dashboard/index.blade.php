@@ -108,3 +108,11 @@
 @section('page_script')
     <script src="{{ asset('js/dashboard.js?v=' . getenv('APP_VERSION')) }}"></script>
 @stop
+
+@section('page_css')
+    <style>
+        .small-box {
+            overflow: hidden;
+        }
+    </style>
+@stop
