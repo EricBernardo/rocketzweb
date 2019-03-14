@@ -12,7 +12,7 @@ class RolesSeeder extends Seeder
     public function run()
     {
         $now = date("Y-m-d H:i:s");
-        
+
         DB::table("roles")->insert([
             [
                 "id"         => 1,
@@ -32,8 +32,14 @@ class RolesSeeder extends Seeder
                 "guard_name" => "web",
                 "created_at" => $now,
                 "updated_at" => $now,
+            ], [
+                "id"         => 4,
+                "name"       => "client",
+                "guard_name" => "web",
+                "created_at" => $now,
+                "updated_at" => $now,
             ],
-        
+
         ]);
     }
 }

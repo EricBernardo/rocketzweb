@@ -57,6 +57,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('user/store', 'UserController@store')->name('user.store');;
         Route::delete('user/delete/{id}', 'UserController@destroy')->name('user.destroy');
 
+        Route::get('company', 'CompanyController@index')->name('company.index');
+        Route::get('company/create', 'CompanyController@create')->name('company.create');
+        Route::get('company/edit/{id}', 'CompanyController@edit')->name('company.edit');
+        Route::put('company/update/{id}', 'CompanyController@update')->name('company.update');;
+        Route::post('company/store', 'CompanyController@store')->name('company.store');;
+        Route::delete('company/delete/{id}', 'CompanyController@destroy')->name('company.destroy');
+
     });
 
     Route::get("cep/{cep}", function ($cep) {

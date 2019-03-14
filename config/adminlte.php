@@ -143,6 +143,12 @@ return [
             'icon' => 'users',
             'can'  => 'root'
         ],
+        [
+            'text' => 'Empresas',
+            'url'  => 'company',
+            'icon' => 'building',
+            'can'  => 'root'
+        ],
 
     ],
 

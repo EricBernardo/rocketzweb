@@ -21,20 +21,35 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                         <div class="row">
-
                             <div class="form-group col-xs-12">
                                 <label>{{ __('messages.role') }}:</label>
                                 <select class="form-control" name="role" required>
-                                    <option value="root" {{ $result->hasRole('root') == 'root' ? 'selected' : '' }}>
+                                    <option value="root" {{ $result->hasRole('root') ? 'selected' : '' }}>
                                         Root
                                     </option>
-                                    <option value="administrator" {{ $result->hasRole('administrator') == 'administrator' ? 'selected' : '' }}>
+                                    <option value="administrator" {{ $result->hasRole('administrator') ? 'selected' : '' }}>
                                         {{ __('messages.administrator') }}
                                     </option>
-                                    <option value="deliveryman" {{ $result->hasRole('deliveryman') == 'deliveryman' ? 'selected' : '' }}>
+                                    <option value="deliveryman" {{ $result->hasRole('deliveryman') ? 'selected' : '' }}>
                                         {{ __('messages.deliveryman') }}
                                     </option>
+                                    <option value="client" {{ $result->hasRole('client') ? 'selected' : '' }}>
+                                        {{ __('messages.client') }}
+                                    </option>
                                 </select>
+                            </div>
+
+                            <div class="form-group col-xs-12 <?php echo !$result->hasRole('client') ? 'hidden' : ''; ?>">
+
+                                <label><strong>{{ __('messages.client') }}:</strong></label>
+
+                                <select class="form-control" name="client_id">
+                                    <option value="">{{ __('messages.select_client') }}</option>
+                                    @foreach($clients as $client)
+                                        <option value="{{$client['id']}}" {{ $result['client_id'] == $client['id'] ? 'selected' : '' }}>{{$client['title']}}</option>
+                                    @endforeach
+                                </select>
+
                             </div>
 
                             <div class="form-group col-xs-12">
@@ -79,3 +94,7 @@
     </section>
 
 @endsection
+
+@section('page_script')
+    <script src="{{ asset('js/user.js?v=' . getenv('APP_VERSION')) }}"></script>
+@stop

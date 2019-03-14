@@ -30,7 +30,24 @@
                                     <option value="deliveryman" {{ old('role') == 'deliveryman' ? 'selected' : '' }}>
                                         {{ __('messages.deliveryman') }}
                                     </option>
+
+                                    <option value="client" {{ old('role') == 'client' ? 'selected' : '' }}>
+                                        {{ __('messages.client') }}
+                                    </option>
                                 </select>
+                            </div>
+
+                            <div class="form-group col-xs-12 hidden">
+
+                                <label><strong>{{ __('messages.client') }}:</strong></label>
+
+                                <select class="form-control" name="client_id">
+                                    <option value="">{{ __('messages.select_client') }}</option>
+                                    @foreach($clients as $client)
+                                        <option value="{{$client['id']}}">{{$client['title']}}</option>
+                                    @endforeach
+                                </select>
+
                             </div>
 
                             <div class="form-group col-xs-12">
@@ -75,3 +92,7 @@
     </section>
 
 @endsection
+
+@section('page_script')
+    <script src="{{ asset('js/user.js?v=' . getenv('APP_VERSION')) }}"></script>
+@stop

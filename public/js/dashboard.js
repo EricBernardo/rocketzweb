@@ -32453,7 +32453,7 @@ new chart_js__WEBPACK_IMPORTED_MODULE_0___default.a(mychart, {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /home/vagrant/code/rocketzweb/resources/js/dashboard.js */"./resources/js/dashboard.js");
+module.exports = __webpack_require__(/*! /home/vagrant/code/benquer/rocketzweb/resources/js/dashboard.js */"./resources/js/dashboard.js");
 
 
 /***/ })

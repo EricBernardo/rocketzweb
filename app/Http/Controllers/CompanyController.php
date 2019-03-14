@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Entities\Client;
-use App\Http\Requests\UserRequest;
-use App\Services\UserServices;
+use App\Http\Requests\CompanyRequest;
+use App\Services\CompanyServices;
 
 /**
- * Class UserController
+ * Class CompanyController
  * @package App\Http\Controllers
  */
-class UserController extends Controller
+class CompanyController extends Controller
 {
 
     private $services;
@@ -18,9 +17,9 @@ class UserController extends Controller
     /**
      * Create a new controller instance.
      *
-     * @param UserServices $services
+     * @param CompanyServices $services
      */
-    public function __construct(UserServices $services)
+    public function __construct(CompanyServices $services)
     {
         $this->middleware('auth');
         $this->services = $services;
@@ -29,7 +28,7 @@ class UserController extends Controller
     public function index()
     {
         $results = $this->services->paginate();
-        return view('layouts.pages.user.index', compact('results'));
+        return view('layouts.pages.company.index', compact('results'));
     }
 
     public function all()
@@ -43,11 +42,10 @@ class UserController extends Controller
 
     public function create()
     {
-        $clients = Client::all(['id', 'title']);
-        return view('layouts.pages.user.create', compact('clients'));
+        return view('layouts.pages.company.create');
     }
 
-    public function store(UserRequest $request)
+    public function store(CompanyRequest $request)
     {
         return $this->services->create($request->all());
     }
@@ -55,11 +53,10 @@ class UserController extends Controller
     public function edit($id)
     {
         $result = $this->services->show($id);
-        $clients = Client::all(['id', 'title']);
-        return view('layouts.pages.user.edit', compact('result', 'clients'));
+        return view('layouts.pages.company.edit', compact('result'));
     }
 
-    public function update(UserRequest $request, $id)
+    public function update(CompanyRequest $request, $id)
     {
         return $this->services->update($request->all(), $id);
     }

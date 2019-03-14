@@ -29,3 +29,7 @@ mix.js([
 mix.js([
     'resources/js/dashboard.js'
 ], 'public/js/dashboard.js');
+
+mix.js([
+    'resources/js/user.js'
+], 'public/js/user.js');
