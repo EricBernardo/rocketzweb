@@ -182,4 +182,6 @@ return [
     'balance'                 => 'Saldo',
     'cash_flow'               => 'Fluxo de caixa',
     'filter'                  => 'Filtro',
+    'select_company'          => 'Selecione uma empresa',
+    'company'                 => 'Empresa',
 ];

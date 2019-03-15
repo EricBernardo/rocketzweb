@@ -135,19 +135,19 @@ return [
         ],
         [
             'header' => 'ACCOUNT SETTINGS',
-            'can'    => 'root'
+            'can'    => 'root|administrator|client'
         ],
         [
             'text' => 'Usuários',
             'url'  => 'user',
             'icon' => 'users',
-            'can'  => 'root'
+            'can'  => 'root|administrator|client'
         ],
         [
             'text' => 'Empresas',
             'url'  => 'company',
             'icon' => 'building',
-            'can'  => 'root'
+            'can'  => 'root|administrator'
         ],
 
     ],

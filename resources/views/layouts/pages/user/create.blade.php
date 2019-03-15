@@ -23,21 +23,22 @@
                             <div class="form-group col-xs-12">
                                 <label>{{ __('messages.role') }}:</label>
                                 <select class="form-control" name="role" required>
-                                    <option value="root" {{ old('role') == 'root' ? 'selected' : '' }}>Root</option>
-                                    <option value="administrator" {{ old('role') == 'administrator' ? 'selected' : '' }}>
-                                        {{ __('messages.administrator') }}
+                                    @hasanyrole('root|administrator');
+                                        <option value="root" {{ old('role') == 'root' ? 'selected' : '' }}>Root</option>
+                                        <option value="administrator" {{ old('role') == 'administrator' ? 'selected' : '' }}>
+                                            {{ __('messages.administrator') }}
+                                        </option>
+                                    @endhasallroles
+                                    <option value="client" {{ old('role') == 'client' ? 'selected' : '' }}>
+                                        {{ __('messages.client') }}
                                     </option>
                                     <option value="deliveryman" {{ old('role') == 'deliveryman' ? 'selected' : '' }}>
                                         {{ __('messages.deliveryman') }}
                                     </option>
-
-                                    <option value="client" {{ old('role') == 'client' ? 'selected' : '' }}>
-                                        {{ __('messages.client') }}
-                                    </option>
                                 </select>
                             </div>
 
-                            <div class="form-group col-xs-12 hidden">
+                            <div class="form-group col-xs-12">
 
                                 <label><strong>{{ __('messages.client') }}:</strong></label>
 
@@ -49,6 +50,27 @@
                                 </select>
 
                             </div>
+
+                            @hasanyrole('root|administrator')
+
+                                <div class="form-group col-xs-12">
+
+                                    <label><strong>{{ __('messages.company') }}:</strong></label>
+
+                                    <select class="form-control" name="company_id" required>
+                                        <option value="">{{ __('messages.select_company') }}</option>
+                                        @foreach($companies as $company)
+                                            <option value="{{$company['id']}}" {{ $result['company_id'] == $company['id'] ? 'selected' : '' }}>{{$company['title']}}</option>
+                                        @endforeach
+                                    </select>
+
+                                </div>
+
+                            @else
+
+                                <input type="hidden" name="company_id" value="{{ auth()->user()->company_id }}">
+
+                            @endhasallroles
 
                             <div class="form-group col-xs-12">
                                 <label>{{ __('messages.name') }}:</label>
