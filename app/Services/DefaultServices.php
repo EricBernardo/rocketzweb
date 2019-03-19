@@ -7,10 +7,10 @@ class DefaultServices
 
     protected $entity;
 
-    public function create($data)
+    public function create($request)
     {
 
-        $result = $this->entity::create($data);
+        $result = $this->entity::create($request->all());
 
         if (request()->wantsJson()) {
             return $result;
@@ -24,12 +24,12 @@ class DefaultServices
 
     }
 
-    public function update($data, $id)
+    public function update($request, $id)
     {
 
         $result = $this->entity::where('id', $id)->first();
 
-        $result->update($data);
+        $result->update($request->all());
 
         if (request()->wantsJson()) {
             return $result;

@@ -54,7 +54,7 @@ class ClientController extends Controller
 
     public function update(ClientRequest $request, $id)
     {
-        return $this->services->update($request->all(), $id);
+        return $this->services->update($request, $id);
     }
 
     public function destroy($id)

@@ -51,7 +51,7 @@ class UserController extends Controller
     
     public function store(UserRequest $request)
     {
-        return $this->services->create($request->all());
+        return $this->services->create($request);
     }
     
     public function edit($id)
@@ -64,7 +64,7 @@ class UserController extends Controller
     
     public function update(UserRequest $request, $id)
     {
-        return $this->services->update($request->all(), $id);
+        return $this->services->update($request, $id);
     }
     
     public function destroy($id)

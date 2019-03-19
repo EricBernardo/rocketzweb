@@ -25,19 +25,16 @@
                             <div class="form-group col-xs-12">
                                 <label>{{ __('messages.role') }}:</label>
                                 <select class="form-control" name="role" required>
-                                    @hasanyrole('root|administrator');
+                                    @hasanyrole('root');
                                         <option value="root" {{ $result->hasRole('root') ? 'selected' : '' }}>
                                             Root
                                         </option>
-                                        <option value="administrator" {{ $result->hasRole('administrator') ? 'selected' : '' }}>
-                                            {{ __('messages.administrator') }}
-                                        </option>
                                     @endhasallroles
+                                    <option value="administrator" {{ $result->hasRole('administrator') ? 'selected' : '' }}>
+                                        {{ __('messages.administrator') }}
+                                    </option>
                                     <option value="client" {{ $result->hasRole('client') ? 'selected' : '' }}>
                                         {{ __('messages.client') }}
-                                    </option>
-                                    <option value="deliveryman" {{ $result->hasRole('deliveryman') ? 'selected' : '' }}>
-                                        {{ __('messages.deliveryman') }}
                                     </option>
                                 </select>
 
@@ -56,7 +53,7 @@
 
                             </div>
 
-                            @hasanyrole('root|administrator')
+                            @hasanyrole('root')
 
                                 <div class="form-group col-xs-12">
 

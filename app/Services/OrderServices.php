@@ -18,8 +18,11 @@ class OrderServices extends DefaultServices
         return $this->entity::orderBy('created_at', 'desc')->with('client')->paginate();
     }
 
-    public function create($data)
+    public function create($request)
     {
+
+        $data = $request->all();
+
         $data_insert = array();
 
         $data_insert['client_id'] = $data['client_id'];
@@ -62,8 +65,10 @@ class OrderServices extends DefaultServices
 
     }
 
-    public function update($data, $id)
+    public function update($request, $id)
     {
+
+        $data = $request->all();
 
         $data_update = array();
 

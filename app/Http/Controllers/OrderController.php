@@ -52,7 +52,7 @@ class OrderController extends Controller
 
     public function update(OrderRequest $request, $id)
     {
-        return $this->services->update($request->all(), $id);
+        return $this->services->update($request, $id);
     }
 
     public function destroy($id)

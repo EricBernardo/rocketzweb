@@ -12,8 +12,10 @@ class ClientServices extends DefaultServices
         $this->entity = Client::class;
     }
 
-    public function create($data)
+    public function create($request)
     {
+
+        $data = $request->all();
 
         $data['cnpj'] = preg_replace('/\D/', '', $data['cnpj']);
 
@@ -31,8 +33,10 @@ class ClientServices extends DefaultServices
 
     }
 
-    public function update($data, $id)
+    public function update($request, $id)
     {
+
+        $data = $request->all();
 
         $result = $this->entity::where('id', $id)->first();
 

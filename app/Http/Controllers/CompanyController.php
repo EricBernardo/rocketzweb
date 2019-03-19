@@ -47,7 +47,7 @@ class CompanyController extends Controller
 
     public function store(CompanyRequest $request)
     {
-        return $this->services->create($request->all());
+        return $this->services->create($request);
     }
 
     public function edit($id)
@@ -58,7 +58,7 @@ class CompanyController extends Controller
 
     public function update(CompanyRequest $request, $id)
     {
-        return $this->services->update($request->all(), $id);
+        return $this->services->update($request, $id);
     }
 
     public function destroy($id)

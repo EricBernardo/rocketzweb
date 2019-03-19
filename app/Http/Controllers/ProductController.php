@@ -47,7 +47,7 @@ class ProductController extends Controller
 
     public function store(ProductRequest $request)
     {
-        return $this->services->create($request->all());
+        return $this->services->create($request);
     }
 
     public function edit($id)
@@ -58,7 +58,7 @@ class ProductController extends Controller
 
     public function update(ProductRequest $request, $id)
     {
-        return $this->services->update($request->all(), $id);
+        return $this->services->update($request, $id);
     }
 
     public function destroy($id)
